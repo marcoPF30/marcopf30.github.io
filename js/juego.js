@@ -5,7 +5,7 @@ var FPS = 50;
 var anchoF = 50;
 var altoF = 50;
 
-var muro = '#000';
+var muro = '#044f14';
 var puerta = '#3a1700';
 var tierra = '#c6892f';
 var llave = '#c6bc00';
@@ -17,6 +17,33 @@ var enemigo=[];
 var imagenAntorcha;
 
 var tileMap;
+
+var musica, sonido1, sonido2, sonido3;
+
+//Traer sonidos
+musica = new Howl({
+  src: ["music/rainy_city.wav"],
+  loop: true,
+  volume: 0.5
+});
+sonido1 = new Howl({
+  src: ["sounds/1.mp3"],//muerte
+  loop: false,
+ 
+});
+sonido2 = new Howl({
+  src: ["sounds/coin.wav"],//llave
+  loop: false,
+ 
+});
+sonido3 = new Howl({
+  src: ["sounds/Win.wav"],//Pasamos de nivel
+  loop: false,
+  
+});
+
+
+
 
 
 
@@ -245,6 +272,7 @@ var jugador = function(){
 
   this.muerte = function(){
     console.log('Has perdido!');
+    sonido1.play();
 
     this.x = 1;
     this.y = 1;
@@ -264,15 +292,17 @@ var jugador = function(){
       this.llave = true;
       escenario[this.y][this.x]=2;
       console.log('Has obtenido la llave!!');
+      sonido2.play();
     }
 
 
 
     //ABRIMOS LA PUERTA
     if(objeto == 1){
-      if(this.llave == true)
+      if(this.llave == true){
         this.victoria();
-      else{
+        sonido3.play();
+     } else{
         console.log('No tienes la llave, no puedes pasar!');
       }
     }
@@ -283,13 +313,22 @@ var jugador = function(){
 }
 
 
+//TODO: Nuevos niveles
 
+//TODO: arreglar las antorchas 4 antorchas
+
+//TODO: Cambiar tileMap cada 5 niveles
 
 
 
 function inicializa(){
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
+
+
+
+  //Musica
+  //musica.play();
 
   tileMap = new Image();
   tileMap.src = 'img/tilemap7.png';
