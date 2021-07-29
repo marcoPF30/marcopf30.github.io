@@ -22,7 +22,7 @@ var musica, sonido1, sonido2, sonido3;
 
 //Traer sonidos
 musica = new Howl({
-  src: ["music/rainy_city.wav"],
+  src: ["music/8_bit_rainy_city_lofi.mp3"],
   loop: true,
   volume: 0.5
 });
