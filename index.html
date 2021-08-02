@@ -1,13 +1,61 @@
 </html>
 
 <head>
+
   <title> Sesion 22</title>
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
   <script src="js/howler.core.js"></script>
   <script src='js/juego.js'></script>
 </head>
 
 <body onload='inicializa();'>
-  <canvas id='canvas' width='750' height='500' style='border:2px solid #000000;'></canvas>
+
+  <div class="container">
+    <center>
+      <canvas id='canvas' width='750' height='500' style='border:2px solid #000000;'></canvas>
+    </center>
+
+
+    <div class="row">
+      
+        <div class="col s12 m6">
+          <div class="card purple darken-4">
+            <div class="card-content white-text">
+              <span class="card-title center">Nivel</span>
+              <p id="nivel"></p>
+            </div>
+            <div class="card-action">
+              <a href="#">Compartir</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 ">
+          <div class="card purple darken-4">
+            <div class="card-content white-text">
+              <span class="card-title center">Maximo</span>
+              <p id="maximo"></p>
+            </div>
+            <div class="card-action">
+              <a href="#">Compartir</a>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+
+
+
+  <!-- script materialize.css -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
