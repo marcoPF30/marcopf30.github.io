@@ -496,15 +496,18 @@ var jugador = function () {
 
 
 //TODO: Estilizar la pagina que contiene el juego a medias
-
 //TODO: Cambiar tileMap cada 5 niveles
+//TODO: Hacer offline el juego
+//TODO: pwa
+//TODO: instrucciones en un pop up
+//TODO: contexto del juego (historia) 
 
 
 
-
+//TODO: Opcional! respuesta aptica del juego (vibración del móvil)
 //TODO: Opcional! Guardar estado del juego
 //TODO: Opcional! animar al prota y a los enemigos
-//TODO: Opcional! adartarlo a movil: botones para movel, gestos de pantalla y limitar uso en horizontal
+//TODO: Opcional! adaptarlo a movil: botones para movil, gestos de pantalla y limitar uso en horizontal
 //TODO: cambiar hubicacion del prota segun el nivel
 //TODO: cambiar hubicacion de los enemigos segun el nivel
 
