@@ -1,61 +1,142 @@
-</html>
+<!DOCTYPE html>
+
+<html lang="es">
 
 <head>
+  <meta charset="UTF-8">
+  <title>Heroe escape</title>
 
-  <title> Sesion 22</title>
+  <link rel="manifest" href="manifest.json">
+
+
+
   <!-- Hoja de estilos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 
   <script src="js/howler.core.js"></script>
   <script src='js/juego.js'></script>
+  <style>
+    @font-face {
+      font-family: "fuente";
+      src: url("PressStart2P.woff") format("woff"), url("PressStart2P.ttf") format("truetype")
+    }
+
+    body {
+      font-family: fuente !important;
+      height: 100vh;
+    }
+  </style>
+
 </head>
 
-<body onload='inicializa();'>
+<body onload='inicializa();'
+  style="background-image: linear-gradient(to right bottom, #292628, #383638, #484749, #59585b, #6a6a6d, #6f7279, #737a85, #748390, #628495, #4b8694, #30888e, #158982); ">
 
-  <div class="container">
+  <nav class="">
+    <div class="nav-wrapper blue-grey">
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down container">
+        <li><a onclick="cambiaStilo(1);" >Estilo 1</a></li>
+        <li><a onclick="cambiaStilo(2);">Estilo 2</a></li>
+        <li><a onclick="cambiaStilo(3);">Estilo 3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <br><br><br>
+  <div class=" container">
     <center>
       <canvas id='canvas' width='750' height='500' style='border:2px solid #000000;'></canvas>
     </center>
 
 
     <div class="row">
-      
-        <div class="col s12 m6">
-          <div class="card purple darken-4">
-            <div class="card-content white-text">
-              <span class="card-title center">Nivel</span>
-              <p id="nivel"></p>
-            </div>
-            <div class="card-action">
-              <a href="#">Compartir</a>
 
-            </div>
+      <div class="col s12 m6">
+        <div class="card blue-grey">
+          <div class="card-content white-text">
+            <span class="card-title center">Nivel</span>
+            <h2 class="center" id="nivel"></h2>
+          </div>
+          <div class="card-action">
+            <a href="#">Compartir</a>
+
           </div>
         </div>
-        <div class="col s12 m6 ">
-          <div class="card purple darken-4">
-            <div class="card-content white-text">
-              <span class="card-title center">Maximo</span>
-              <p id="maximo"></p>
-            </div>
-            <div class="card-action">
-              <a href="#">Compartir</a>
+      </div>
+      <div class="col s12 m6 ">
+        <div class="card blue-grey">
+          <div class="card-content white-text">
+            <span class="card-title center">Maximo</span>
+            <h2 class="center" id="maximo"></h2>
+          </div>
+          <div class="card-action">
+            <a href="#">Compartir</a>
 
-            </div>
           </div>
         </div>
+      </div>
     </div>
-    
 
+
+    <a class="btn-floating btn-large waves-effect waves-light right green darken-3 modal-trigger" href="#modal1"><i
+        class="material-icons">help_outline</i></a>
+
+
+
+  </div> <!-- finaliza container -->
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Bienvenido!!!</h4>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet minima officiis ipsa quis, deleniti dicta
+        asperiores eum nulla, qui quae quisquam excepturi. Non assumenda eum sequi quaerat ex inventore modi.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Empezar</a>
+    </div>
   </div>
 
 
 
 
-
   <!-- script materialize.css -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="materialize.min.js"></script>
+
+  <script>
+    M.AutoInit();
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, options);
+    });
+
+  </script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      console.log("El Navegador admite service workers");
+      window.addEventListener('load', function () {
+        //navigator.serviceWorker.register('sw_offlinepage.js')
+        //navigator.serviceWorker.register('sw_offlinesite.js')
+        navigator.serviceWorker.register('js/sw.js')
+
+          .then(function (registration) {
+            console.log('Service worker registrado de modo correcto');
+            console.log('Scope: ' + registration.scope)
+          }, function (error) {
+            console.log('El registro del Service worker ha fallado');
+            console.log(error)
+          });
+      });
+    }
+  </script>
 </body>
 
 </html>

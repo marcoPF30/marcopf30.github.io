@@ -22,6 +22,8 @@ var musica, sonido1, sonido2, sonido3;
 
 var nivel = 1;
 
+var stiloMapa = 'img/tilemap5.png';
+
 //Traer sonidos
 musica = new Howl({
   src: ["music/rainy_city.wav"],
@@ -87,16 +89,16 @@ var escenario2 = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 var escenario3 = [
-  [0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0],
-  [0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0],
-  [0, 0, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0],
-  [0, 2, 2, 0, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0],
-  [0, 2, 0, 2, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 3],
-  [0, 2, 0, 0, 0, 1, 0, 0, 2, 0, 2, 0, 2, 0, 2],
-  [0, 2, 0, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 0, 2],
-  [0, 2, 2, 2, 0, 2, 0, 0, 2, 2, 2, 2, 2, 2, 2],
-  [0, 0, 0, 2, 2, 2, 0, 2, 2, 0, 2, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0]
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 2, 0, 0, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0],
+  [0, 2, 2, 2, 2, 2, 2, 0, 2, 0, 2, 0, 2, 0, 0],
+  [0, 2, 0, 0, 0, 0, 2, 2, 2, 0, 2, 0, 2, 0, 0],
+  [0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 3, 0],
+  [0, 0, 2, 0, 0, 1, 0, 0, 2, 2, 2, 2, 0, 0, 0],
+  [0, 2, 2, 2, 2, 2, 0, 0, 2, 0, 0, 2, 0, 0, 0],
+  [0, 2, 0, 0, 0, 2, 0, 0, 2, 0, 0, 2, 2, 0, 0],
+  [0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
 //Niveles de Gustavo Hernández
@@ -138,8 +140,8 @@ var escenario6 = [
   [0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0],
   [0, 2, 0, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0],
   [0, 1, 2, 2, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0],
-  [0, 0, 0, 0, 0, 2, 2, 0, 2, 2, 2, 2, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0]
+  [0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
 var escenario7 = [
@@ -191,48 +193,48 @@ function dibujaEscenario() {
   //casos para cada escenario por nivel
   switch (nivel) {
     case 1:
-      escenario=escenario1;
-      document.getElementById('nivel').innerHTML=nivel;
+      escenario = escenario1;
+      document.getElementById('nivel').innerHTML = nivel;
       /*  document.getElementById('nivel').innerHTML=nivel; */
       break;
     case 2:
-      escenario=escenario2;
-       document.getElementById('nivel').innerHTML=nivel;
+      escenario = escenario2;
+      document.getElementById('nivel').innerHTML = nivel;
       break;
     case 3:
-      escenario=escenario3;
-       document.getElementById('nivel').innerHTML=nivel;
+      escenario = escenario3;
+      document.getElementById('nivel').innerHTML = nivel;
       break;
     case 4:
-      escenario=escenario4;
-       document.getElementById('nivel').innerHTML=nivel;
+      escenario = escenario4;
+      document.getElementById('nivel').innerHTML = nivel;
       break;
     case 5:
-      escenario=escenario5;
-       document.getElementById('nivel').innerHTML=nivel;
+      escenario = escenario5;
+      document.getElementById('nivel').innerHTML = nivel;
       break;
     case 6:
-      escenario=escenario6;
-       document.getElementById('nivel').innerHTML=nivel;
+      escenario = escenario6;
+      document.getElementById('nivel').innerHTML = nivel;
       break;
     case 7:
-      escenario=escenario7;
-       document.getElementById('nivel').innerHTML=nivel;
+      escenario = escenario7;
+      document.getElementById('nivel').innerHTML = nivel;
       break;
     case 8:
-      escenario=escenario8;
-       document.getElementById('nivel').innerHTML=nivel;
+      escenario = escenario8;
+      document.getElementById('nivel').innerHTML = nivel;
       break;
     case 9:
-      escenario=escenario9;
-       document.getElementById('nivel').innerHTML=nivel;
+      escenario = escenario9;
+      document.getElementById('nivel').innerHTML = nivel;
       break;
-  
+
     default:
       alert("LLegaste final, has gando!!!");
       break;
   }
-  console.log("NIVEL: "+nivel);
+  console.log("NIVEL: " + nivel);
   for (y = 0; y < 10; y++) {
     for (x = 0; x < 15; x++) {
 
@@ -423,7 +425,7 @@ var jugador = function () {
 
   this.victoria = function () {
     console.log('Has ganado!');
-    
+
     this.x = 1;
     this.y = 1;
 
@@ -436,19 +438,19 @@ var jugador = function () {
   this.muerte = function () {
     console.log('Has perdido!');
 
-    setTimeout("sonido1.play();", 0.1*1000);
-    setTimeout("location.reload();", 0.6*1000);
-    
+    setTimeout("sonido1.play();", 0.1 * 1000);
+    setTimeout("location.reload();", 0.6 * 1000);
+
     if (nivel > recuperar()) {
       guardar(nivel);
     }
-    
+
     this.x = 1;
     this.y = 1;
 
-    nivel=1;
+    nivel = 1;
 
-    
+
 
     this.llave = false; //el jugador ya no tiene la llave
     escenario[8][3] = 3; //volvemos a poner la llave en su sitio
@@ -475,7 +477,7 @@ var jugador = function () {
       if (this.llave == true) {
         this.victoria();
         sonido3.play();
-        
+
       } else {
         console.log('No tienes la llave, no puedes pasar!');
       }
@@ -489,27 +491,43 @@ var jugador = function () {
 
 
 
+//TODO: Cambiar tileMap cada 5 niveles (dejar que el jugador escoja el estilo)
 
-
-
-
-
-
-//TODO: Estilizar la pagina que contiene el juego a medias
-//TODO: Cambiar tileMap cada 5 niveles
-//TODO: Hacer offline el juego
+//TODO: contexto del juego (historia) e istrucciones detalladas
 //TODO: pwa
-//TODO: instrucciones en un pop up
-//TODO: contexto del juego (historia) 
+//TODO: cambiar hubicacion del prota segun el nivel
+//TODO: cambiar hubicacion de los enemigos segun el nivel
 
-
+/*----------------------------------------------------------------------------*/
 
 //TODO: Opcional! respuesta aptica del juego (vibración del móvil)
 //TODO: Opcional! Guardar estado del juego
 //TODO: Opcional! animar al prota y a los enemigos
-//TODO: Opcional! adaptarlo a movil: botones para movil, gestos de pantalla y limitar uso en horizontal
-//TODO: cambiar hubicacion del prota segun el nivel
-//TODO: cambiar hubicacion de los enemigos segun el nivel
+//TODO: Opcional! atarldapo a movil: botones para movil, gestos de pantalla y limitar uso en horizontal
+
+
+function cambiaStilo(tile) {
+  switch (tile) {
+    case 1:
+      stiloMapa = 'img/tilemap5.png';
+      inicializa();
+      break;
+    case 2:
+      stiloMapa = 'img/tilemap6.png';
+      inicializa();
+      break;
+    case 3:
+      stiloMapa = 'img/tilemap7.png';
+      inicializa();
+      break;
+
+    default:
+      break;
+  }
+
+}
+
+
 
 function inicializa() {
   canvas = document.getElementById('canvas');
@@ -522,8 +540,16 @@ function inicializa() {
   //Musica
   //musica.play();
 
+
+
+
   tileMap = new Image();
-  tileMap.src = 'img/tilemap5.png';
+
+
+
+
+
+  tileMap.src = stiloMapa;
 
 
 
@@ -580,8 +606,8 @@ function guardar(nivel) {
 
 //recuperado
 function recuperar() {
-  return(localStorage.getItem("max"));
-  
+  return (localStorage.getItem("max"));
+
 }
 
 
@@ -630,4 +656,3 @@ function principal() {
 
 
   console.log("Nivel: ",localStorage.getItem("Hola4")); */
-  
