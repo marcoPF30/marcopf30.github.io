@@ -293,7 +293,29 @@ var malo = function (x, y) {
 
 
   this.dibuja = function () {
-    ctx.drawImage(tileMap, 0, 32, 32, 32, this.x * anchoF, this.y * altoF, anchoF, altoF);
+
+    switch (nivel) {
+      case 1:
+      case 2:
+      case 3:
+        ctx.drawImage(tileMap, 0, 32, 32, 32, this.x * anchoF, this.y * altoF, anchoF, altoF);
+        break;
+      case 4:
+      case 5:
+      case 6:
+        ctx.drawImage(tileMap, 64, 32, 32, 32, this.x * anchoF, this.y * altoF, anchoF, altoF);
+        break;
+      case 7:
+      case 8:
+        ctx.drawImage(tileMap, 96, 32, 32, 32, this.x * anchoF, this.y * altoF, anchoF, altoF);
+        break;
+    
+      default:
+        break;
+    }
+
+
+   /*  ctx.drawImage(tileMap, 0, 32, 32, 32, this.x * anchoF, this.y * altoF, anchoF, altoF); */
   }
 
 
@@ -510,15 +532,54 @@ function cambiaStilo(tile) {
   switch (tile) {
     case 1:
       stiloMapa = 'img/tilemap5.png';
-      inicializa();
+      tileMap = new Image();
+
+
+
+
+
+      tileMap.src = stiloMapa;
+      borraCanvas();
+      dibujaEscenario();
+      imagenAntorcha.dibuja();
+      imagenAntorcha2.dibuja();
+      imagenAntorcha3.dibuja();
+      imagenAntorcha4.dibuja();
+      protagonista.dibuja();
       break;
     case 2:
       stiloMapa = 'img/tilemap6.png';
-      inicializa();
+      tileMap = new Image();
+
+
+
+
+
+      tileMap.src = stiloMapa;
+      borraCanvas();
+      dibujaEscenario();
+      imagenAntorcha.dibuja();
+      imagenAntorcha2.dibuja();
+      imagenAntorcha3.dibuja();
+      imagenAntorcha4.dibuja();
+      protagonista.dibuja();
       break;
     case 3:
       stiloMapa = 'img/tilemap7.png';
-      inicializa();
+      tileMap = new Image();
+
+
+
+
+
+      tileMap.src = stiloMapa;
+      borraCanvas();
+      dibujaEscenario();
+      imagenAntorcha.dibuja();
+      imagenAntorcha2.dibuja();
+      imagenAntorcha3.dibuja();
+      imagenAntorcha4.dibuja();
+      protagonista.dibuja();
       break;
 
     default:
@@ -568,7 +629,7 @@ function inicializa() {
   imagenAntorcha4 = new antorcha(14, 9);
 
   //CREAMOS LOS ENEMIGOS
-  //enemigo.push(new malo(3, 3));
+ // enemigo.push(new malo(3, 3));
   enemigo.push(new malo(5, 7));
   //enemigo.push(new malo(7, 7));
 
@@ -577,6 +638,7 @@ function inicializa() {
 
     if (tecla.keyCode == 38) {
       protagonista.arriba();
+      window.navigator.vibrate(200);
     }
 
     if (tecla.keyCode == 40) {
